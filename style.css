@@ -1,0 +1,85 @@
+* {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+}
+
+.bg-odd {
+  background-color: #F6E8D1;
+}
+
+.bg-even {
+  background-color: #0B2A2C;
+}
+
+.bg-pink {
+  background-color: #F7B6BF;
+}
+
+.text-color-pink {
+  color: #F7B6BF;
+}
+
+.text-color-primary-green {
+  color: #27704C;
+}
+
+.text-color-secondary-green {
+  color: #0B2A2C;
+}
+
+.text-color-cream {
+  color: #F6E8D1;
+}
+
+.first-section {
+  height: 90vh;
+}
+
+.pill-hero-banner {
+  display: inline-block;
+  border-radius: 250px;
+  padding: 20px 10%;
+  transform: rotate(-2.55deg);
+}
+
+.pill-intersection {
+  bottom: 6vh;
+}
+
+.calendar {
+  position: fixed;
+  background-color: #F7B6BF;
+  border-radius: 32px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  width: 20vw;
+  height: 29vh;
+  margin: -5% 0 0 10%;
+  gap: 10px;
+  padding: 1%;
+}
+
+.calendar .first-row {
+  grid-row: 1;
+  background-color: #27704C;
+  border-radius: 32px 32px 0 0;
+}
+
+.calendar .second-row {
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: 6fr 4fr;
+  gap: 10px;
+}
+
+.calendar .first-column {
+  grid-column: 1;
+  background-color: #27704C;
+  border-radius: 0 0 0 32px;
+}
+
+.calendar .second-column {
+  grid-column: 2;
+  background-color: #27704C;
+  border-radius: 0 0 32px 0;
+}
