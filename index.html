@@ -6,6 +6,7 @@
 
     <!-- Feuille de CSS -->
     <link href="style.css" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
 <body>
@@ -66,16 +67,78 @@
 
 <!-- Third section -->
 
-<div class="h-screen bg-odd">
-
+<div class="h-screen bg-odd flex justify-center">
+    <img src="img/notre_galeire.png" alt="img-2" class="w-100 h-full">
 </div>
 
 <!-- Fourth section -->
 
 <div class="h-screen bg-even">
+    <p class="w-1/2 text-[200%] pt-36 text-color-pink">
+        <span class="underline">Rejoignez-nous</span> avant le lancement officiel pour <span class="underline">profiter</span> d’une <span class="underline">galerie offerte</span>.
+    </p>
 
+    <div class="pill">
+        <span id="pill-text">Inscrivez-vous pour votre galerie 3D gratuite</span>
+        <form id="email-form" class="hidden">
+            <input type="email" id="email-input" placeholder="Votre email" required />
+            <button type="button" onclick="storeEmail()">Envoyer</button>
+        </form>
+    </div>
 </div>
 
+<script>
+
+    function storeEmail() {
+        console.log("Enregistrement de l'email...");
+        const email = document.getElementById("email-input").value; // Mise à jour ici
+
+        if (!email) {
+            alert("Veuillez entrer un email !");
+            return;
+        }
+
+        const apiURL = "https://api.jsonbin.io/v3/b/6764558fad19ca34f8dde853"; // ID du Bin
+        const apiKey = "$2a$10$IPt1B2vqF.FmT5yKLq8j7OTZSejVlceoeogS9PUeC2bONSpAVtVPi"; // Clé Maître
+        const accessKey = "$2a$10$F7EqRjadV187N6AvYl7BOe4QYKekzr1RSbxzCvNKvuQY1mCT93vsy"; // Clé d'Accès
+
+        fetch(`${apiURL}/latest`, {
+            method: "GET",
+            headers: {
+                "X-Master-Key": apiKey,
+                "X-Access-Key": accessKey
+            }
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log("Données actuelles dans le Bin :", data.record);
+
+                const emails = data.record.emails || {};
+                const timestamp = Date.now();
+                emails[timestamp] = email;
+
+                console.log("Nouvelles données à envoyer :", { emails });
+
+                return fetch(apiURL, {
+                    method: "PUT",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "X-Master-Key": apiKey,
+                        "X-Access-Key": accessKey
+                    },
+                    body: JSON.stringify({ emails })
+                });
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log("Réponse JSONBin :", data);
+                alert("Email enregistré avec succès !");
+            })
+            .catch(error => {
+                console.error("Erreur :", error);
+                alert("Erreur lors de l'envoi des données !");
+            });
+    }
+</script>
 </body>
-<script src="https://cdn.tailwindcss.com"></script>
 </html>

@@ -87,3 +87,62 @@
   background-color: #27704C;
   border-radius: 0 0 32px 0;
 }
+
+.pill {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 2px solid #F7B6BF;
+  border-radius: 999999px;
+  background-color: transparent;
+  color: #F7B6BF;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#pill-text {
+  display: inline-block;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.hidden {
+  display: none;
+}
+
+#email-form {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+#email-input {
+  flex: 1;
+  padding: 5px 10px;
+  border: 2px solid #F7B6BF;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+#email-form button {
+  padding: 5px 10px;
+  border: none;
+  background-color: #F7B6BF;
+  color: #0B2A2C;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#email-form button:hover {
+  background-color: #e09ca8;
+}
+
+.underline {
+  text-decoration: underline;
+  text-decoration-color: #27704C;
+}
