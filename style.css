@@ -87,3 +87,7 @@
   background-color: #27704C;
   border-radius: 0 0 32px 0;
 }
+
+.img-top-s2{
+  transform: rotate(-2.55deg);
+}
