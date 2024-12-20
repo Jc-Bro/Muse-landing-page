@@ -8,6 +8,9 @@
     <link href="style.css" rel="stylesheet"/>
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- Favicon-->
+    <link rel="icon" href="img/petite-image.jpg" type="image/jpg">
+
 </head>
 <body>
 <div id="mobile-blocker">
@@ -17,7 +20,7 @@
 <div class="first-section bg-odd content">
     <h1 class="font-extrabold text-5xl pt-10 ps-16">
         <span class="text-color-pink uppercase mt-[-15px]">mu</span>
-        <span class="text-color-primary-green uppercase">se.</span>
+        <span class="text-color-primary-green uppercase ml-[-1%]">se.</span>
     </h1>
 
     <h2 class="font-extrabold flex flex-col pt-16 ps-28">
@@ -35,19 +38,21 @@
         </p>
     </div>
 
-    <div class="calendar text-color-pink">
-        <div class="first-row text-[1em] flex justify-center p-5">
-            Rejoignez-nous avant le lancement !
-        </div>
-        <div class="second-row text-7xl flex justify-center">
-            <div class="first-column flex justify-center items-center tracking-widest">
-                30
+    <a href="#free-signup">
+        <div class="calendar text-color-pink z-[100]">
+            <div class="first-row text-[1em] flex justify-center p-5">
+                Rejoignez-nous avant le lancement !
             </div>
-            <div class="second-column flex justify-center items-center">
-                J
+            <div class="second-row text-7xl flex justify-center">
+                <div class="first-column flex justify-center items-center tracking-widest">
+                    30
+                </div>
+                <div class="second-column flex justify-center items-center">
+                    J
+                </div>
             </div>
-        </div>
-    </div>
+            </div>
+    </a>
     <!-- Intersection -->
 
     <div class="pill-intersection right-24 absolute bg-pink text-color-cream text-[120%] py-4 px-8 rounded-full">
@@ -58,16 +63,31 @@
 <!-- Second section -->
 
 <div class="h-screen bg-even content">
+<div id="second-section" class="h-screen bg-even">
     <div class="flex flex-row-reverse">
-        <div class="w-1/2">
-            <p class="text-[200%] mt-36 text-color-pink">
+        <div class="w-1/2 ml-[-6vw]">
+            <p class="text-[200%] mt-[10vh] text-color-pink">
                 Votre galerie 3D immersive GRATUITE vous attend : inscrivez-vous !
             </p>
+            <div class="m-0 w-2/3">
+                <p class="text-color-cream mt-[5vh] text-[110%]">
+                    Laissez vous emporter par une nouvelle manière de vivre l’art. Pour les artistes, c’est une vitrine innovante pour exposer vos œuvres au monde entier dans un espace professionnel et captivant.
+                </p>
+                <p class="text-color-cream mt-[5vh] text-[110%]">
+                    Pour les amateurs, c’est une exploration unique, où vous découvrez des talents émergents comme si vous étiez dans une galerie réelle.
+                </p>
+                <p class="text-color-cream mt-[5vh] mb-[10vh] text-[110%]">
+                    Accessible,
+                    <span class="text-color-pink">immersive et interactive</span>
+                    , notre galerie 3D redéfinit votre expérience artistique.
+                </p>
+                <a class="text-color-pink bg-[#27704C] rounded-[250px] py-[3%] px-[10%] text-[1.4em]" href="#free-signup">S'inscrire gratuitement</a>
+            </div>
 
         </div>
-        <div class="mr-[14vw] mt-36">
-            <img class=" img-top-s2 w-[35vw]" src="img/img-top-section2.webp" alt="img-1-s2">
-            <img class="w-[35vw]" src="img/img-bottom-section2.webp" alt="img-2-s2">
+        <div class="mr-[20.5vw] my-[7vh]">
+            <img class=" img-top-s2 w-[38vw]" src="img/img-top-section2.webp" alt="img-1-s2">
+            <img class="w-[38vw]" src="img/img-bottom-section2.webp" alt="img-2-s2">
         </div>
     </div>
 </div>
@@ -82,10 +102,12 @@
 
 <div class="h-screen bg-even content">
     <p class="w-1/2 text-[200%] pt-36 text-color-pink">
+<div id="free-signup" class="h-screen bg-even">
+    <p class="text-[5em] pt-[3%] text-color-pink text-center">
         <span class="underline">Rejoignez-nous</span> avant le lancement officiel pour <span class="underline">profiter</span> d’une <span class="underline">galerie offerte</span>.
     </p>
 
-    <div class="pill">
+    <div class="pill mt-[5%] ml-[40vw]">
         <span id="pill-text">Inscrivez-vous pour votre galerie 3D gratuite</span>
         <form id="email-form" class="hidden">
             <input type="email" id="email-input" placeholder="Votre email" required />
